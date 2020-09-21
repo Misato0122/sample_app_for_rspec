@@ -24,14 +24,14 @@ RSpec.describe Task, type: :model do
       task = create(:task)
       task_with_duplicate_title = build(:task, title: task.title)
       expect(task_with_duplicate_title).to be_invalid
-      expect(task_with_duplicate_title.errors[:title]).to eq["has already been taken"]
+      expect(task_with_duplicate_title.errors[:title]).to eq ["has already been taken"]
     end
 
     it 'is valid with another title' do
       task = create(:task)
       task_with_another_title = build(:task, title: 'another_title')
       expect(task_with_another_title).to be_valid
-      expect(task_with_another_title).to be_empty
+      expect(task_with_another_title.errors[:title]).to be_empty
     end
   end
 end

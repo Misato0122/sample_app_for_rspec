@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   it 'is valid with all attributes' do
     user = User.new(
-      email: "sample@sample.com",
+      email: "sample@example.com",
       password: "hogehoge",
     )
 
@@ -30,7 +30,7 @@ RSpec.describe Task, type: :model do
 
   it 'is invalid with a duplicate title' do
     user = User.new(
-      email: "sample@sample.com",
+      email: "sample@example.com",
       password: "hogehoge",
     )
 
@@ -52,7 +52,7 @@ RSpec.describe Task, type: :model do
 
   it 'is valid with another title' do
     user = User.new(
-      email: "sample@sample.com",
+      email: "sample@example.com",
       password: "hogehoge",
     )
 
